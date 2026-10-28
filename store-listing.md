@@ -2,8 +2,10 @@
 
 Published from Mihai Belgun's personal developer account (it can be transferred to an ESS Tech SRL organisation account later; users, reviews and the package id stay).
 Contact e-mail for the listing: mihaibelgun@ess-tech.ro
+Privacy policy URL: https://mihaibelgun.github.io/Facturescu/privacy-policy.html
+Website: https://mihaibelgun.github.io/Facturescu/
 
-Package: `ro.esstech.facturescu` · Category: Finance · Price: free, with the one-time in-app product `pro_unlock` (Facturescu Pro).
+Package: `ro.esstech.facturescu` · Category: Finance · Price: free. Pro (`pro_unlock`) is switched off (`PRO_ON_SALE = false`) while the app is on the personal account, which can't sell; every feature is free.
 Default language: Romanian (ro-RO). Optional second language: English (en-US).
 
 ## Romanian (ro-RO)
@@ -35,9 +37,8 @@ DATELE TALE RĂMÂN LA TINE
 • Facturile și istoricul rămân pe telefonul tău. Nu avem servere, reclame sau instrumente de urmărire.
 • Plătești pe site-ul furnizorului; datele cardului nu trec prin aplicație.
 
-GRATUIT SAU PRO
-Versiunea gratuită include facturi nelimitate, remindere, butonul de plată, 2 conturi de furnizor conectate și ultimele 3 luni de istoric și statistici.
-Facturescu Pro adaugă conturi conectate nelimitate, filtrarea după adresă și tot istoricul. Plată unică, fără abonament.
+GRATUIT
+Toate funcțiile sunt gratuite: facturi și conturi conectate nelimitate, remindere, butonul de plată, filtrarea după adresă, tot istoricul și statisticile. Fără reclame, fără abonament.
 
 Facturescu nu este afiliat cu furnizorii afișați și nu este aprobat de aceștia. Numele și siglele lor aparțin proprietarilor lor.
 
@@ -72,9 +73,8 @@ YOUR DATA STAYS WITH YOU
 • Your bills and history stay on your phone. No servers, no ads, no tracking.
 • You pay on the provider's site; card details never pass through the app.
 
-FREE OR PRO
-The free version includes unlimited bills, reminders, the Pay button, 2 connected provider accounts and the last 3 months of history and stats.
-Facturescu Pro adds unlimited connected accounts, filtering by address and your full history. One-time purchase, no subscription.
+FREE
+Every feature is free: unlimited bills and connected accounts, reminders, the Pay button, filtering by address, and your full history and stats. No ads, no subscription.
 
 Facturescu is not affiliated with or endorsed by the providers shown. Their names and logos belong to their owners.
 
@@ -93,7 +93,7 @@ Developed by Mihai Belgun. Contact: mihaibelgun@ess-tech.ro
 The app shows the user's utility bills and opens the provider's own website to pay. It does not process payments, hold funds, offer loans or give financial advice.
 
 **App access** (instructions for reviewers)
-No account is needed to use the app. Tap „Adaugă factură” to add a bill by hand; reminders, history, stats and the Pro screen all work with bills added this way. Connecting a provider account needs the user's own account with that Romanian provider, so it can't be shown with demo credentials.
+No account is needed to use the app. Tap „Adaugă factură” to add a bill by hand; reminders, history and stats all work with bills added this way. Connecting a provider account needs the user's own account with that Romanian provider, so it can't be shown with demo credentials.
 
 **Ads**: the app contains no ads.
 
