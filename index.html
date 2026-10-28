@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Facturescu – toate facturile tale, la timp</title>
+<meta name="description" content="Facturescu preia automat facturile de la furnizori, îți amintește de scadențe și te duce direct la plată. Datele rămân pe telefonul tău. Fără abonament.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='18 18 72 72'%3E%3Crect x='18' y='18' width='72' height='72' rx='16' fill='%23F59E0B'/%3E%3Cpath fill='%23fff' d='M34,30H66V44H48V51H60V63H48V80L44.5,77 41,80 37.5,77 34,80Z'/%3E%3Ccircle cx='66' cy='68' r='15' fill='%23F59E0B'/%3E%3Ccircle cx='66' cy='68' r='12' fill='%2378350F'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --text: #1b1f1e; --muted: #4a5552; --bg: #f6faf9; --card: #ffffff; --line: #d6dfdc;
+    --accent: #00796b; --amber: #f59e0b; --brown: #78350f;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --text: #e3e9e7; --muted: #aab6b3; --bg: #0f1513; --card: #1b211f; --line: #303634; --accent: #80cbc4; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  a { color: var(--accent); }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 16px; }
+
+  header.hero { background: var(--amber); color: #fff; }
+  .hero .wrap { display: flex; align-items: center; gap: 32px; padding-top: 56px; padding-bottom: 56px; }
+  .hero svg { width: 120px; height: 120px; flex: none; border-radius: 28px; box-shadow: 0 0 0 4px rgba(255,255,255,0.35); }
+  .hero h1 { margin: 0; font-size: 2.6rem; line-height: 1.1; }
+  .hero p { margin: 8px 0 20px; font-size: 1.2rem; color: var(--brown); font-weight: 600; }
+  .play { display: inline-block; background: #1b1f1e; color: #fff; text-decoration: none; padding: 12px 20px; border-radius: 10px; font-weight: 600; }
+  .play small { display: block; font-weight: 400; opacity: 0.8; font-size: 0.75rem; }
+
+  section { padding: 40px 0 8px; }
+  h2 { font-size: 1.35rem; margin: 0 0 16px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
+  .card h3 { margin: 0 0 4px; font-size: 1rem; }
+  .card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+  .providers { color: var(--muted); }
+
+  table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+  th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-size: 0.9rem; color: var(--muted); font-weight: 600; }
+  tr:last-child td { border-bottom: none; }
+  td:nth-child(2), td:nth-child(3), th:nth-child(2), th:nth-child(3) { text-align: center; width: 22%; }
+  .note { color: var(--muted); font-size: 0.95rem; }
+
+  footer { margin-top: 48px; border-top: 1px solid var(--line); padding: 24px 0 40px; color: var(--muted); font-size: 0.9rem; }
+  footer p { margin: 4px 0; }
+
+  @media (max-width: 600px) {
+    .hero .wrap { flex-direction: column; text-align: center; gap: 20px; padding-top: 40px; padding-bottom: 40px; }
+    .hero svg { width: 96px; height: 96px; border-radius: 22px; }
+    .hero h1 { font-size: 2.1rem; }
+    td:nth-child(2), td:nth-child(3), th:nth-child(2), th:nth-child(3) { width: 26%; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <!-- The launcher icon: the torn-receipt F with the reminder bell, on amber. -->
+    <svg viewBox="18 18 72 72" role="img" aria-label="Sigla Facturescu">
+      <rect x="18" y="18" width="72" height="72" fill="#F59E0B"/>
+      <path fill="#fff" d="M34,30H66V44H48V51H60V63H48V80L44.5,77 41,80 37.5,77 34,80Z"/>
+      <circle cx="66" cy="68" r="15" fill="#F59E0B"/>
+      <circle cx="66" cy="68" r="12" fill="#78350F"/>
+      <path fill="#fff" d="M66,61c-3.2,0 -5,2.5 -5,5.7v3.2l-2,2h14l-2,-2v-3.2c0,-3.2 -1.8,-5.7 -5,-5.7zM64,73.5a2,2 0 0,0 4,0z"/>
+    </svg>
+    <div>
+      <h1>Facturescu</h1>
+      <p>Toate facturile tale, la timp. Fără abonament.</p>
+      <a class="play" href="https://play.google.com/store/apps/details?id=ro.esstech.facturescu">
+        <small>Disponibil pe</small>Google Play
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <h2>Ce face</h2>
+    <div class="grid">
+      <div class="card"><h3>Preia facturile singur</h3><p>Conectezi contul de la furnizor, iar Facturescu aduce suma și scadența fiecărei facturi noi.</p></div>
+      <div class="card"><h3>Îți amintește la timp</h3><p>Primești o notificare înainte de scadență și când apare o factură nouă.</p></div>
+      <div class="card"><h3>Plătești în câteva secunde</h3><p>Butonul „Plătește” deschide direct pagina furnizorului, deja autentificat.</p></div>
+      <div class="card"><h3>Istoric și statistici</h3><p>Vezi ce ai plătit lună de lună, pe categorii, cu grafic.</p></div>
+      <div class="card"><h3>Mai multe locuințe</h3><p>Filtrează facturile după adresă: acasă, la părinți, apartamentul închiriat.</p></div>
+      <div class="card"><h3>Orice altă factură</h3><p>Chirie, asigurări, rate sau abonamente: le adaugi manual, în câteva secunde.</p></div>
+    </div>
+    <p class="providers">Furnizori conectați: PPC, E.ON, Hidroelectrica, Digi, Orange, Netflix, Aquatim, Aqua Dumbrăvița, Platformis și Ghișeul.ro (taxe locale, ANAF).</p>
+  </section>
+
+  <section>
+    <h2>Datele tale rămân la tine</h2>
+    <div class="grid">
+      <div class="card"><h3>Parola nu ajunge la noi</h3><p>Te autentifici pe pagina proprie a furnizorului. Facturescu nu vede și nu păstrează parola.</p></div>
+      <div class="card"><h3>Totul pe telefon</h3><p>Facturile și istoricul stau doar pe telefonul tău. Fără servere, reclame sau urmărire.</p></div>
+      <div class="card"><h3>Plata la furnizor</h3><p>Datele cardului merg doar la furnizor și la banca ta, niciodată prin aplicație.</p></div>
+    </div>
+    <p class="note">Detalii în <a href="privacy-policy.html">politica de confidențialitate</a>.</p>
+  </section>
+
+  <section>
+    <h2>Gratuit sau Pro</h2>
+    <table>
+      <tr><th></th><th>Gratuit</th><th>Pro</th></tr>
+      <tr><td>Facturi, remindere, butonul de plată</td><td>Nelimitat</td><td>Nelimitat</td></tr>
+      <tr><td>Conturi de furnizor conectate</td><td>2</td><td>Nelimitat</td></tr>
+      <tr><td>Filtrare după adresă</td><td>–</td><td>Da</td></tr>
+      <tr><td>Istoric și statistici</td><td>Ultimele 3 luni</td><td>Complet</td></tr>
+    </table>
+    <p class="note">Facturescu Pro este o plată unică, prin Google Play. Fără abonament.</p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Dezvoltat de Mihai Belgun · <a href="mailto:mihaibelgun@ess-tech.ro">mihaibelgun@ess-tech.ro</a></p>
+    <p><a href="privacy-policy.html">Politica de confidențialitate</a> · <a href="privacy-policy.html#en">Privacy policy (English)</a></p>
+    <p>Facturescu nu este afiliat cu furnizorii menționați și nu este aprobat de aceștia. Numele lor aparțin proprietarilor lor.</p>
+  </div>
+</footer>
+
+</body>
+</html>
